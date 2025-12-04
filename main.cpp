@@ -21,7 +21,7 @@ int main() {
     deq.deque(); // { 3, 4, 5, 6 } added 2 to the servedOrders -> { 1, 2 }
     deq.enque(1); // { 1, 3, 4, 5, 6 }
     deq.enque(2); // { 2, 1, 3, 4, 5, 6 }
-    deq.enque(2); // { 2, 2, 1, 3, 4, 5, 6 }
+    deq.enque(4); // { 4, 2, 1, 3, 4, 5, 6 }
 
     std::cout<<deq<<"\nSee popped elements: ";
     deq.seePopped();
@@ -39,13 +39,12 @@ int main() {
     std::cout<<"\n===Deque 3===\nDeque: "<<deq3<<" // Copy constructor working\n"<<"Before enque: "<<deq3<<std::endl;
     deq3.enque(7);
     std::cout<<"After enque: "<<deq3<<std::endl;
-    deq3.deque();
-    deq3.deque();
+    deq3.deque(); deq3.deque();
     std::cout<<"After 2 deque: "<<deq3<<"\nPopped elements: ";
     deq3.seePopped();
     std::cout<<"\nAlready placed orders (popped elements) replaced order: ";
-    deq3.enque(3);
-    deq3.enque(4);
+    deq3.enque(3); deq3.enque(4);
     std::cout<<deq3;
     return 0;
 }
+// If concerns about AI here's GitHub repo -> https://github.com/DigitalMelquiades/Deque
