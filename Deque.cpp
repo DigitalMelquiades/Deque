@@ -28,6 +28,11 @@ Deque::~Deque() {
 bool Deque::isEmpty() const { return head == nullptr; }
 bool Deque::isRecurring(const int& value) const {
     for (const int& order:servedOrders) if (order == value) return true;
+    Node* it = head;
+    while (it) {
+        if (it->data == value) return true;
+        it = it->next;
+    }
     return false;
 }
 void Deque::enque(const int& value) {
@@ -49,7 +54,7 @@ void Deque::enque(const int& value) {
 void Deque::deque() {
     if (isEmpty()) throw std::out_of_range("The list is empty!\n");
     Node* temp = head;
-    if (!isRecurring(temp->data)) servedOrders.push_back(temp->data); // To avoid repeating server orders
+    servedOrders.push_back(temp->data);
     if (head == tail) head=tail=nullptr; // Case if we have only one element
     else {
         head = head->next;

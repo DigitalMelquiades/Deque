@@ -21,6 +21,7 @@ int main() {
     deq.deque(); // { 3, 4, 5, 6 } added 2 to the servedOrders -> { 1, 2 }
     deq.enque(1); // { 1, 3, 4, 5, 6 }
     deq.enque(2); // { 2, 1, 3, 4, 5, 6 }
+    deq.enque(2); // { 2, 2, 1, 3, 4, 5, 6 }
 
     std::cout<<deq<<"\nSee popped elements: ";
     deq.seePopped();
